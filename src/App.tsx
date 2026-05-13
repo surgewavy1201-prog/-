@@ -68,8 +68,8 @@ export default function App() {
           transition={{ delay: 0.2 }}
           className="text-5xl md:text-7xl font-serif tracking-tighter leading-none"
         >
-          The Vision of <br />
-          <span className="text-zinc-300 italic">Future City 2026</span>
+          RE:CONNECT - <br />
+          <span className="text-zinc-300 italic">공간, 삶의 온기를 잇다</span>
         </motion.h2>
       </header>
 
@@ -137,8 +137,11 @@ export default function App() {
               </button>
 
               {/* Left: Image */}
-              <div className="w-full md:w-2/3 bg-zinc-50 overflow-hidden h-72 md:h-auto">
-                <img 
+              <div className="w-full md:w-2/3 bg-zinc-50 overflow-hidden h-[40vh] md:h-auto">
+                <motion.img 
+                  initial={{ scale: 1.1, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
                   src={selectedProject.img} 
                   alt={selectedProject.title}
                   className="w-full h-full object-cover"
@@ -147,27 +150,41 @@ export default function App() {
               </div>
 
               {/* Right: Description */}
-              <div className="w-full md:w-1/3 p-8 md:p-12 flex flex-col justify-center overflow-y-auto bg-white border-l border-zinc-50">
+              <motion.div 
+                initial={{ x: 20, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ delay: 0.2, duration: 0.5 }}
+                className="w-full md:w-1/3 p-8 md:p-12 flex flex-col justify-center overflow-y-auto bg-white border-l border-zinc-50"
+              >
                 <p className="text-[10px] tracking-[0.4em] uppercase text-zinc-300 mb-6">{selectedProject.category}</p>
                 <h2 className="text-4xl font-serif tracking-tighter leading-tight mb-4">{selectedProject.title}</h2>
                 <p className="text-md text-zinc-800 mb-8 font-medium tracking-tight">{selectedProject.designer}</p>
                 
                 <div className="space-y-6">
                   <div className="h-px bg-zinc-100 w-full" />
-                  <div>
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4 }}
+                  >
                     <h4 className="text-[11px] uppercase tracking-widest font-bold text-zinc-900 mb-3">Design Concept</h4>
                     <p className="text-[15px] leading-relaxed text-zinc-500 font-light">{selectedProject.desc}</p>
-                  </div>
+                  </motion.div>
                   <div className="h-px bg-zinc-100 w-full" />
                 </div>
 
-                <div className="mt-12">
+                <motion.div 
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5 }}
+                  className="mt-12"
+                >
                   <button className="group w-full flex items-center justify-center gap-3 text-[11px] uppercase tracking-widest px-8 py-5 bg-zinc-900 text-white hover:bg-zinc-800 transition-all">
                     프로젝트 상세 페이지 보기
                     <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                   </button>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             </motion.div>
           </div>
         )}
@@ -212,10 +229,10 @@ export default function App() {
                   <span className="font-medium text-zinc-900 italic underline decoration-zinc-200 underline-offset-4">ARCHI-GRAD 2026</span>은 2026년 졸업을 맞이하는 건축학도들의 치열한 고민과 창의적인 시선을 담은 온라인 졸업 작품전 아카이브입니다.
                 </p>
                 <p>
-                  올해의 주제인 <span className="font-medium text-zinc-800">"The Vision of Future City 2026"</span>은 급변하는 기후 위기, 초고령화 사회, 그리고 디지털 전환이라는 거대한 흐름 속에서 우리가 살아가야 할 미래 도시의 물리적, 사회적 질서를 건축적으로 모색합니다.
+                  올해의 주제인 <span className="font-medium text-zinc-800">"RE:CONNECT - 공간, 삶의 온기를 잇다"</span>는 급변하는 기후 위기, 초고령화 사회, 그리고 디지털 전환이라는 거대한 흐름 속에서 우리가 살아가야 할 미래 도시의 물리적, 사회적 질서를 건축적으로 모색합니다.
                 </p>
                 <p>
-                  20개 팀의 독창적인 프로젝트를 통해 내일의 공간이 제안하는 새로운 가능성을 직접 확인해 보시기 바랍니다.
+                  25개 팀의 독창적인 프로젝트를 통해 내일의 공간이 제안하는 새로운 가능성을 직접 확인해 보시기 바랍니다.
                 </p>
               </div>
 
